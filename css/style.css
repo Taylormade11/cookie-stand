@@ -11,7 +11,7 @@ ul {
   flex-direction: column;
   float: left;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 2.7rem;
   padding: 40px;
   border: 4px solid black;
   font-weight: bold;
@@ -26,4 +26,13 @@ ul :last-child {
   font-family: sans-serif;
   color: black;
   font-weight: bold;
+}
+header {
+  text-align: center;
+  font-size: 4rem;
+}
+
+#salmon {
+  display: flex;
+  align-content: center;
 }
