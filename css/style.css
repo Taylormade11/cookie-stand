@@ -1,5 +1,5 @@
 body {
-  background-color: salmon;
+  background-color: #ff8a80;
 }
 
 li {
@@ -10,10 +10,6 @@ h1 {
   font-size: 4rem;
   text-decoration: underline;
   text-align: center;
-}
-
-div {
-  margin-left: 8%;
 }
 
 ul {
@@ -31,12 +27,7 @@ li {
   color: rgb(46, 43, 43);
   font-weight: normal;
 }
-div ul :last-child {
-  font-size: 2.5rem;
-  font-family: sans-serif;
-  color: black;
-  font-weight: bold;
-}
+
 header {
   text-align: center;
   font-size: 4rem;
@@ -60,12 +51,47 @@ hr {
   border-radius: 20%;
 }
 
+#table {
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%
+}
+
+
 #hours {
   background-color: rgb(173, 172, 172);
   border-radius: 20%;
+  font-family: Helvetica;
 }
 #salmon {
   display: flex;
   align-content: center;
   margin-left: 560px;
+}
+
+tr {
+  border-style: solid;
+  border-color: black;
+}
+
+td {
+  padding: 5px;
+  text-align: center;
+  background-color: #ffbcaf;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  font-size: 2rem;
+}
+
+.tableHead {
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px grey;
+}
+
+.stores {
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px grey;
 }
