@@ -11,7 +11,7 @@ function CreateStore(storeName, minCustPerHr, maxCustPerHr, avgSalePerCust) {
   this.avgSalePerCust = avgSalePerCust;
 }
 
-CreateStore.prototype.renderHeader = function() {
+CreateStore.renderHeader = function() {
   var tableElement = document.getElementById('table');
   var tableRow = document.createElement('tr');
   tableRow.setAttribute('class', 'tableHead');
@@ -65,7 +65,7 @@ var seattleCenter = new CreateStore('Seattle Center', 11, 38, 3.7);
 var capitolHill = new CreateStore('Capitol Hill', 20, 38, 2.3);
 var alki = new CreateStore('Alki', 2, 16, 4.6);
 
-firstAndPike.renderHeader();
+CreateStore.renderHeader();
 firstAndPike.cookiesPerHr();
 firstAndPike.getTotal();
 seaTacAirport.cookiesPerHr();
