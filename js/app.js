@@ -15,7 +15,7 @@ var firstAndPike = {
   totalCookies: 0,
   calcCookiesPerHr: function() {
     for (var i = 0; i < hrsOfOperation.length -1; i++) {
-      var numOfCustsPerHr = Math.round(Math.random() * (65 - 23) + 23);
+      var numOfCustsPerHr = Math.round(Math.random() * (this.maxCustPerHr - this.minCustPerHr) + this.minCustPerHr);
       var ulItemElement = document.getElementById('firstAndPike');
       this.cookiesSoldEachHr[i] = Math.round(numOfCustsPerHr * this.avgSalePerCust);
       this.totalCookies += this.cookiesSoldEachHr[i];
@@ -41,7 +41,7 @@ var seaTacAirport = {
   totalCookies: 0,
   calcCookiesPerHr: function() {
     for (var i = 0; i < hrsOfOperation.length - 1; i++) {
-      var numOfCustsPerHr = Math.round(Math.random() * (24 - 3) + 3);
+      var numOfCustsPerHr = Math.round(Math.random() * (this.maxCustPerHr - this.minCustPerHr) + this.minCustPerHr);
       var ulItemElement = document.getElementById('seaTacAirport');
       this.cookiesSoldEachHr[i] = Math.round(numOfCustsPerHr * this.avgSalePerCust);
       this.totalCookies += this.cookiesSoldEachHr[i];
@@ -66,7 +66,7 @@ var seattleCenter = {
   totalCookies: 0,
   calcCookiesPerHr: function() {
     for (var i = 0; i < hrsOfOperation.length - 1; i++) {
-      var numOfCustsPerHr = Math.round(Math.random() * (38 - 11) + 11);
+      var numOfCustsPerHr = Math.round(Math.random() * (this.maxCustPerHr - this.minCustPerHr) + this.minCustPerHr);
       var ulItemElement = document.getElementById('seattleCenter');
       this.cookiesSoldEachHr[i] = Math.round(numOfCustsPerHr * this.avgSalePerCust);
       this.totalCookies += this.cookiesSoldEachHr[i];
@@ -91,7 +91,7 @@ var capitolHill = {
   totalCookies: 0,
   calcCookiesPerHr: function() {
     for (var i = 0; i < hrsOfOperation.length - 1; i++) {
-      var numOfCustsPerHr = Math.round(Math.random() * (38 - 20) + 20);
+      var numOfCustsPerHr = Math.round(Math.random() * (this.maxCustPerHr - this.minCustPerHr) + this.minCustPerHr);
       var ulItemElement = document.getElementById('capitolHill');
       this.cookiesSoldEachHr[i] = Math.round(numOfCustsPerHr * this.avgSalePerCust);
       this.totalCookies += this.cookiesSoldEachHr[i];
@@ -117,7 +117,7 @@ var alki = {
   totalCookies: 0,
   calcCookiesPerHr: function() {
     for (var i = 0; i < hrsOfOperation.length - 1; i++) {
-      var numOfCustsPerHr = Math.round(Math.random() * (16 - 2) + 2);
+      var numOfCustsPerHr = Math.round(Math.random() * (this.maxCustPerHr - this.minCustPerHr) + this.minCustPerHr);
       var ulItemElement = document.getElementById('alki');
       this.cookiesSoldEachHr[i] = Math.round(numOfCustsPerHr * this.avgSalePerCust);
       this.totalCookies += this.cookiesSoldEachHr[i];
