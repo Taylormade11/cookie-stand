@@ -4,6 +4,9 @@ console.log('Don\'t forget to style!');
 
 var hrsOfOperation = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', 'Total'];
 
+var listOfStores = ['firstAndPike', 'seaTacAirport', 'seattleCenter', 'capitolHill', 'alki'];
+
+
 var firstAndPike = {
   minCustPerHr: 23,
   maxCustPerHr: 65,
@@ -21,8 +24,8 @@ var firstAndPike = {
       ulItemElement.appendChild(listItemElement);
     }
   },
-  calcTotalCookies: function() {
-    var ulItemElement = document.getElementById('firstAndPike');
+  calcTotalCookies: function(targetStore) {
+    var ulItemElement = document.getElementById(listOfStores[targetStore]);
     var listItemElement = document.createElement('li');
     listItemElement.textContent = hrsOfOperation[15] + ': ' + this.totalCookies;
     ulItemElement.appendChild(listItemElement);
@@ -132,7 +135,7 @@ var alki = {
 };
 
 firstAndPike.calcCookiesPerHr();
-firstAndPike.calcTotalCookies();
+firstAndPike.calcTotalCookies(0);
 seaTacAirport.calcCookiesPerHr();
 seaTacAirport.calcTotalCookies();
 seattleCenter.calcCookiesPerHr();
