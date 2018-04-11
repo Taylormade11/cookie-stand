@@ -141,8 +141,5 @@ td {
 }
 
 #fish {
-  display: block;
-  margin: auto;
-  width: 100%;
-  max-width: 200px;
+  max-width: 100px;
 }
