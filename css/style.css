@@ -16,15 +16,17 @@ h1 {
   font-weight: bold;
 }
 
-ul, span {
-  float: left;
-  font-size: 1.2rem;
+article {
+  display: block;
+  font-size: 1.75rem;
   border: 4px solid black;
   background-color: rgb(173, 172, 172);
   border-radius: 10px;
   font-family: Helvetica;
   color: black;
   padding: 30px;
+  margin-bottom: 50px;
+  text-align: center;
 }
 li {
   font-size: 1.5rem;
@@ -38,7 +40,7 @@ header {
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   text-align: center;
   font-weight: normal;
 }
@@ -62,7 +64,7 @@ hr {
 #salmon {
   display: flex;
   align-content: center;
-  margin-left: 560px;
+  margin-left: 400px;
 }
 
 tr {
@@ -95,16 +97,14 @@ td {
   color: rgb(2, 34, 43);
 }
 
-p {
-  font-size: 1.3rem;
-  padding: 10px;
-}
-
-span {
-  float: right;
+section {
+  display: inline-block;
   border-radius: 10px;
-}
-
-aside {
-  float: right;
+  font-size: 1.2rem;
+  border: 4px solid black;
+  background-color: rgb(173, 172, 172);
+  border-radius: 10px;
+  font-family: Helvetica;
+  color: black;
+  padding: 30px;
 }
