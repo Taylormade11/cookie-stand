@@ -146,5 +146,6 @@ td {
 
 .fish2 {
   max-width: 100px;
+  transform: skewX(-1);
   -webkit-transform: scaleX(-1);
 }

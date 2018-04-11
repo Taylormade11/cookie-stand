@@ -59,6 +59,9 @@ CreateStore.prototype.getTotal = function() {
   tableRow.appendChild(grandTotal);
 };
 
+
+
+
 var firstAndPike = new CreateStore('1st & Pike', 23, 65, 6.3);
 var seaTacAirport = new CreateStore('SeaTac Airport', 3, 24, 1.2);
 var seattleCenter = new CreateStore('Seattle Center', 11, 38, 3.7);
