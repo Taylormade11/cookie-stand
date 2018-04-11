@@ -139,3 +139,10 @@ td {
   height: 200px;
   padding: 20px;
 }
+
+#fish {
+  display: block;
+  margin: auto;
+  width: 100%;
+  max-width: 200px;
+}
