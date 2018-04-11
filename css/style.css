@@ -140,6 +140,11 @@ td {
   padding: 20px;
 }
 
-#fish {
+.fish {
   max-width: 100px;
+}
+
+.fish2 {
+  max-width: 100px;
+  -webkit-transform: scaleX(-1);
 }
