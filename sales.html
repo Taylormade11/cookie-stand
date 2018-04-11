@@ -19,13 +19,13 @@
       <fieldset>
         <legend>Let's open another frachise!</legend>
         <label for="store-location-input">Store Location</label>
-        <input id="store-location-input" name="storeLocation" placeholder="Enter CrossStreets">
+        <input minlength=3 id="store-location-input" name="storeLocation" placeholder="Enter CrossStreets">
         <label for="min-cust-input">Estimated Min Customers Per Hr</label>
-        <input type="number" id="min-cust-input" name="minCust">
+        <input required type="number" id="min-cust-input" name="minCust">
         <label for="max-cust-input">Estimated Max Customers Per Hr</label>
-        <input type="number"  id="max-cust-input" name="maxCust">
+        <input required type="number"  id="max-cust-input" name="maxCust">
         <label for="avg-sale-per-cust">Average Sale Per Customer</label>
-        <input type="number" id="avg-sale-per-cust" name="avgSale">
+        <input required type="number" id="avg-sale-per-cust" name="avgSale">
         <input type="submit" id="submit">
       </fieldset>
     </form>
