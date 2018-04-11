@@ -141,10 +141,11 @@ td {
 }
 
 .fish {
-  max-width: 100px;
+  max-width: 250px;
 }
 
 .fish2 {
-  max-width: 100px;
+  max-width: 250px;
+  transform: skewX(-1);
   -webkit-transform: scaleX(-1);
 }

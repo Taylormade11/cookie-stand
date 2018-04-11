@@ -2,6 +2,23 @@
 
 var hrsOfOperation = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', 'Daily Store Total'];
 
+var submitButton = document.getElementById('submit');
+submitButton.addEventListener('click', function() {
+});
+
+var addStoreElement = document.getElementById('addStoreForm');
+addStoreElement.addEventListener('submit', handleNewStore);
+
+function handleNewStore(event) {
+  event.preventDefault();
+  alert('Thank you for your interest in our Franchise! We will crunch the numbers and see if a store at this location makes sense.');
+  var submitButton = event.target;
+  var newStore = new CreateStore(submitButton.storeLocation.value, submitButton.minCust.value, submitButton.maxCust.value, submitButton.avgSale.value);
+  console.log(newStore);
+  newStore.cookiesPerHr();
+  newStore.getTotal();
+}
+
 function CreateStore(storeName, minCustPerHr, maxCustPerHr, avgSalePerCust) {
   this.cookiesSoldEachHr = [];
   this.totalCookies = 0;
