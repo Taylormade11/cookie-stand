@@ -3,6 +3,7 @@
 var hrsOfOperation = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', 'Daily Store Total'];
 
 var hrlyValues = [];
+var hrTotals = [];
 var storeTotals = [];
 var stores = [];
 
@@ -95,15 +96,14 @@ CreateStore.renderHrTotals = function() {
   var timeTotal = document.createElement('td');
   timeTotal.textContent = 'Hourly Totals';
   tableRow.appendChild(timeTotal);
-  var hrlyValueCounter = 0;
-  for (var i = 0; i < stores.length; i ++) {
-    var hrlyTotal = 0;
-    for (var j = 0; j < hrsOfOperation.length -1; j++) {
-      hrlyTotal += hrlyValues[hrlyValueCounter];
-      hrlyValueCounter += 1;
+  var startingPoint = 0;
+  for (var i = 0; i < hrsOfOperation.length - 1; i ++) {
+    var strtPoint = startingPoint;
+    for (var j = 0; j < stores.length; j ++) {
+      console.log(hrlyValues[strtPoint]);
+      strtPoint += 15;
     }
-    console.log(hrlyTotal);
-    console.log(hrlyValueCounter);
+    startingPoint += 1;
   }
 };
 
