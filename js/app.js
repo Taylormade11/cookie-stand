@@ -2,8 +2,10 @@
 
 var hrsOfOperation = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', 'Daily Store Total'];
 
-var hourlyAllCookies = [];
-var hrlyTotals = [];
+var hrlyValues = [];
+var storeTotals = [];
+var stores = [];
+
 
 var addStoreForm = document.getElementById('submit');
 addStoreForm.addEventListener('click', function() {
@@ -32,8 +34,10 @@ function CreateStore(storeName, minCustPerHr, maxCustPerHr, avgSalePerCust) {
   this.minCustPerHr = minCustPerHr;
   this.maxCustPerHr = maxCustPerHr;
   this.avgSalePerCust = avgSalePerCust;
+  stores.push(this.storeName);
 }
 
+// Renders time header - Called once
 CreateStore.renderTimes = function() {
   var tableElement = document.getElementById('table');
   var tableRow = document.createElement('tr');
@@ -63,8 +67,7 @@ CreateStore.prototype.cookiesPerHr = function() {
     var tableElement = document.getElementById('table');
     var randomCookies = (Math.round(numOfCustsPerHr * this.avgSalePerCust));
     this.cookiesSoldEachHr.push(randomCookies);
-    hourlyAllCookies.push(randomCookies);
-    hrlyTotals.push(randomCookies);
+    hrlyValues.push(randomCookies);
     this.totalCookies += randomCookies;
     tableRow.textcontent = hrsOfOperation[i];
     var tableData = document.createElement('td');
@@ -75,7 +78,7 @@ CreateStore.prototype.cookiesPerHr = function() {
   grandTotal.textContent = this.totalCookies;
   tableRow.appendChild(grandTotal);
   tableElement.appendChild(tableRow);
-  tableElement.appendChild(tableRow);
+  storeTotals.push(this.totalCookies);
 };
 
 var firstAndPike = new CreateStore('1st & Pike', 23, 65, 6.3);
@@ -85,18 +88,22 @@ var capitolHill = new CreateStore('Capitol Hill', 20, 38, 2.3);
 var alki = new CreateStore('Alki', 2, 16, 4.6);
 
 CreateStore.renderHrTotals = function() {
-  var tableElement = document.getElementById('table');
+  var tableFooter = document.getElementById('tfoot');
   var tableRow = document.createElement('tr');
   tableRow.setAttribute('class', 'hrTotals');
-  tableElement.appendChild(tableRow);
-  var totalTime = document.createElement('td');
-  totalTime.textContent = 'Hourly Totals';
-  tableRow.appendChild(totalTime);
-  for (var i in hrsOfOperation) {
-    tableElement = document.getElementById('table');
-    totalTime = document.createElement('td');
-    totalTime.textContent = hrlyTotals[i +15];
-    tableRow.appendChild(totalTime);
+  tableFooter.appendChild(tableRow);
+  var timeTotal = document.createElement('td');
+  timeTotal.textContent = 'Hourly Totals';
+  tableRow.appendChild(timeTotal);
+  var hrlyValueCounter = 0;
+  for (var i = 0; i < stores.length; i ++) {
+    var hrlyTotal = 0;
+    for (var j = 0; j < hrsOfOperation.length -1; j++) {
+      hrlyTotal += hrlyValues[hrlyValueCounter];
+      hrlyValueCounter += 1;
+    }
+    console.log(hrlyTotal);
+    console.log(hrlyValueCounter);
   }
 };
 
