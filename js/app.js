@@ -24,6 +24,8 @@ function handleNewStore(event) {
     parseInt(addStoreForm.maxCust.value),
     parseFloat(addStoreForm.avgSale.value));
   newStore.cookiesPerHr();
+  CreateStore.removeFooter();
+  CreateStore.renderFooter();
 }
 
 function CreateStore(storeName, minCustPerHr, maxCustPerHr, avgSalePerCust) {
@@ -86,14 +88,21 @@ var seattleCenter = new CreateStore('Seattle Center', 11, 38, 3.7);
 var capitolHill = new CreateStore('Capitol Hill', 20, 38, 2.3);
 var alki = new CreateStore('Alki', 2, 16, 4.6);
 
+
+CreateStore.removeFooter = function () {
+  var removeFoot = document.getElementById('hrTotals');
+  removeFoot.remove();
+};
+
 CreateStore.renderFooter = function() {
   var tableFooter = document.getElementById('tfoot');
-  var tableRow = document.createElement('tr');
-  tableRow.setAttribute('class', 'hrTotals');
-  tableFooter.appendChild(tableRow);
+  var footRow = document.createElement('tr');
+  footRow.setAttribute('id', 'hrTotals');
+  tableFooter.appendChild(footRow);
   var timeTotal = document.createElement('td');
+  timeTotal.setAttribute('class', 'hrTotals');
   timeTotal.textContent = 'Hourly Totals';
-  tableRow.appendChild(timeTotal);
+  footRow.appendChild(timeTotal);
   var startingPoint = 0;
   var grandTotal =0;
   for (var i = 0; i < hrsOfOperation.length - 1; i ++) {
@@ -106,8 +115,9 @@ CreateStore.renderFooter = function() {
       hrTotal += hr;
     }
     timeTotal = document.createElement('td');
+    timeTotal.setAttribute('class', 'hrTotals');
     timeTotal.textContent = hrTotal;
-    tableRow.appendChild(timeTotal);
+    footRow.appendChild(timeTotal);
     startingPoint += 1;
   }
   for (var total of storeTotals) {
@@ -115,7 +125,7 @@ CreateStore.renderFooter = function() {
   }
   timeTotal = document.createElement('td');
   timeTotal.textContent = grandTotal;
-  tableRow.appendChild(timeTotal);
+  footRow.appendChild(timeTotal);
 };
 
 CreateStore.renderTimes();
