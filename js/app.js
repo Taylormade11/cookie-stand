@@ -3,7 +3,6 @@
 var hrsOfOperation = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', 'Daily Store Total'];
 
 var hrlyValues = [];
-var hrTotals = [];
 var storeTotals = [];
 var stores = [];
 
@@ -21,11 +20,10 @@ function handleNewStore(event) {
   var addStoreForm = event.target;
   var newStore = new CreateStore(
     addStoreForm.storeLocation.value,
-    addStoreForm.minCust.value,
-    addStoreForm.maxCust.value,
-    addStoreForm.avgSale.value);
+    parseInt(addStoreForm.minCust.value),
+    parseInt(addStoreForm.maxCust.value),
+    parseFloat(addStoreForm.avgSale.value));
   newStore.cookiesPerHr();
-  newStore.getTotal();
 }
 
 function CreateStore(storeName, minCustPerHr, maxCustPerHr, avgSalePerCust) {
@@ -75,9 +73,9 @@ CreateStore.prototype.cookiesPerHr = function() {
     tableData.textContent = randomCookies;
     tableRow.appendChild(tableData);
   }
-  var grandTotal = document.createElement('td');
-  grandTotal.textContent = this.totalCookies;
-  tableRow.appendChild(grandTotal);
+  var strTotal = document.createElement('td');
+  strTotal.textContent = this.totalCookies;
+  tableRow.appendChild(strTotal);
   tableElement.appendChild(tableRow);
   storeTotals.push(this.totalCookies);
 };
@@ -88,7 +86,7 @@ var seattleCenter = new CreateStore('Seattle Center', 11, 38, 3.7);
 var capitolHill = new CreateStore('Capitol Hill', 20, 38, 2.3);
 var alki = new CreateStore('Alki', 2, 16, 4.6);
 
-CreateStore.renderHrTotals = function() {
+CreateStore.renderFooter = function() {
   var tableFooter = document.getElementById('tfoot');
   var tableRow = document.createElement('tr');
   tableRow.setAttribute('class', 'hrTotals');
@@ -97,14 +95,27 @@ CreateStore.renderHrTotals = function() {
   timeTotal.textContent = 'Hourly Totals';
   tableRow.appendChild(timeTotal);
   var startingPoint = 0;
+  var grandTotal =0;
   for (var i = 0; i < hrsOfOperation.length - 1; i ++) {
     var strtPoint = startingPoint;
+    var hrTotal = 0;
     for (var j = 0; j < stores.length; j ++) {
-      console.log(hrlyValues[strtPoint]);
+      var hr = 0;
+      hr = hrlyValues[strtPoint];
       strtPoint += 15;
+      hrTotal += hr;
     }
+    timeTotal = document.createElement('td');
+    timeTotal.textContent = hrTotal;
+    tableRow.appendChild(timeTotal);
     startingPoint += 1;
   }
+  for (var total of storeTotals) {
+    grandTotal += total;
+  }
+  timeTotal = document.createElement('td');
+  timeTotal.textContent = grandTotal;
+  tableRow.appendChild(timeTotal);
 };
 
 CreateStore.renderTimes();
@@ -113,4 +124,4 @@ seaTacAirport.cookiesPerHr();
 seattleCenter.cookiesPerHr();
 capitolHill.cookiesPerHr();
 alki.cookiesPerHr();
-CreateStore.renderHrTotals();
+CreateStore.renderFooter();
