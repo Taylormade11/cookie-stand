@@ -189,6 +189,10 @@ tbody :nth-child(odd) {
   background-color: #D46A6A;
 }
 
+tfoot :nth-child(odd) {
+  background-color: #D46A6A;
+}
+
 article p {
   padding: 30px;
 }
