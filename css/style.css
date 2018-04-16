@@ -5,22 +5,51 @@ html {
 }
 
 header {
-  text-align: center;
-  font-size: 4rem;
-  background-color: #801515;
+  display: inline-block;
+  background-color: white;
   width: 100%;
   color: #FFAAAA;
+  height: 175px;
+}
+
+#pat {
+  display: inline;
+  text-align: left;
+  font-size: 4rem;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: salmon;
+}
+
+.social {
+  display: flex;
+  float: right;
+  padding: 0px;
+}
+
+
+.tabs ul {
+  display: flex;
+  margin-top: 0px;
+  margin-bottom: -100px;
+}
+
+.tabs li {
+  display: inline-flex;
+  margin: 0 300px;
+  font-size: 3rem;
 }
 
 h1 {
+  display: inline-block;
   font-size: 3rem;
   letter-spacing: 3px;
-  text-decoration: underline;
   text-align: center;
   color: #550000;
   padding-top: 5px;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: auto;
+  justify-content: center;
 }
 
 h2 {
@@ -37,7 +66,6 @@ h2 {
   justify-content: space-around;
   background-color: #D46A6A;
   width: 100%;
-  padding-bottom: 20px;
 }
 
 ul {
@@ -142,13 +170,6 @@ td {
   margin-top: 10px;
 }
 
-#chin2 {
-  max-width: 150px;
-  transform: skewX(-1);
-  -webkit-transform: scaleX(-1);
-  margin-top: 10px;
-}
-
 .fish1 {
   max-width: 100px;
   padding: 20px;
@@ -160,12 +181,12 @@ td {
 }
 
 .fish3 {
-  max-width: 250px;
+  max-width: 225px;
   padding: 20px;
 }
 
 .fish4 {
-  max-width: 250px;
+  max-width: 225px;
   transform: skewX(-1);
   -webkit-transform: scaleX(-1);
   padding: 20px;
@@ -194,7 +215,7 @@ tfoot :nth-child(odd) {
 }
 
 article p {
-  padding: 30px;
+  padding: 20px;
 }
 
 section {
@@ -217,18 +238,24 @@ section ul:first-child {
 }
 
 #shirt {
-  margin-left: 300px;
-  margin-right: 300px;
+  margin-left: 200px;
+  margin-right: 200px;
   margin-top: 70px;
   margin-bottom: 20px;
+  height: 325px;
+  width: 325px;
 }
 
 #frosted {
   margin-bottom: 20px;
+  height: 325px;
+  width: 325px;
 }
 
 #cutter {
   margin-bottom: 20px;
+  height: 325px;
+  width: 325px;
 }
 
 aside {
